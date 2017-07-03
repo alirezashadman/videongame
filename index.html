@@ -1,0 +1,56 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<nav>
+		<ul>
+			<li><a href="index.html">HOME</a></li>
+			<li><a href="buy.html">BET</a></li>
+			<li><a href="#">BUY</a>
+				<ul>
+					<li><a href="game.html">GAME</a></li>
+					<li><a href="movie.html">MOVIE</a></li>
+					<li><a href="#">...</a></li>
+				</ul>
+			</li>
+			<li><a href="#">ABOUT</a></li>
+		</ul>
+	</nav>
+
+<div id="slider">	
+	<div id="picture">
+		<img src="flag.jpg" width="500" height="350">
+		<img src="redsquare.jpg" width="500" height="350">
+		<a href="game.html"><img src="gtalogo.jpg" width="500" height="350"></a>
+	</div>
+</div>
+	
+<script type="text/javascript">
+	//document.getElementById('slider-left').onclick = moveLeft;
+	autoSlide();
+	left = 0;
+	//var timer;
+
+	function autoSlide () {
+		timer = setTimeout (moveLeft, 2500);
+	}
+
+
+	function moveLeft () {
+		var picture = document.getElementById('picture');
+		left = left - 500;
+		if (left < -1000) {
+			left = 0; 
+			clearTimeout (timer);
+		}
+		picture.style.left = left + 'px';
+		autoSlide();
+	}
+</script>
+
+</body>
+</html>
